@@ -1,0 +1,55 @@
+.Switch {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  width: 4rem;
+  background-color: #4e4d4d;
+  margin: 3rem 3rem;
+  justify-content: center;
+}
+.Switch:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+}
+
+.Button {
+  height: 90%;
+  width: 50%;
+  margin: 0 0.1rem;
+  background-color: green;
+  transform: translateX(-0.8rem);
+  transition: background-color 1s ease-out;
+}
+
+.slideRight {
+  animation: slideRight 0.5s forwards;
+}
+
+.slideLeft {
+  animation: slideLeft 0.5s forwards;
+  background-color: #8d0000;
+}
+
+.Description {
+  position: fixed;
+  transform: translateY(1.5rem);
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-0.8rem);
+  }
+  to {
+    transform: translateX(0.8rem);
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(0.8rem);
+  }
+  to {
+    transform: translateX(-0.8rem);
+  }
+}
+
+/*# sourceMappingURL=Switch.module.css.map */

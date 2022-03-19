@@ -1,0 +1,55 @@
+.Switch {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  width: 4rem;
+  background-color: rgb(78, 77, 77);
+  margin: 3rem 3rem;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(90%);
+  }
+}
+
+.Button {
+  height: 90%;
+  width: 50%;
+  margin: 0 0.1rem;
+  background-color: green;
+  transform: translateX(-0.8rem);
+  transition: background-color 1s ease-out;
+}
+
+.slideRight {
+  animation: slideRight 0.5s forwards;
+}
+
+.slideLeft {
+  animation: slideLeft 0.5s forwards;
+  background-color: rgb(141, 0, 0);
+}
+
+.Description {
+  position: fixed;
+  transform: translateY(1.5rem);
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-0.8rem);
+  }
+  to {
+    transform: translateX(0.8rem);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0.8rem);
+  }
+  to {
+    transform: translateX(-0.8rem);
+  }
+}

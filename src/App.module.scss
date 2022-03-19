@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.App {
+  width: 50rem;
+  height: 25rem;
+  border: 4px solid rgb(3, 102, 3);
+  outline: none;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.Pad {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.Drumpad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  width: 6rem;
+  margin: 0 0.5rem;
+  border: none;
+  background-color: gray;
+  filter: brightness(80%);
+  color: white;
+  font-size: 1.7rem;
+  box-shadow: 5px 0px 20px green;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+  &:hover {
+    filter: brightness(70%);
+  }
+}
+
+.DrumpadClicked {
+  background-color: green;
+  box-shadow: 0 0 10px 10px rgb(141, 0, 0);
+  color: rgb(141, 0, 0);
+}
+
+.Controls {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+  color: white;
+
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+}
+
+.Logo {
+  position: fixed;
+  z-index: 2;
+  transform: translateY(-190%) translateX(300%);
+}
+
+.Display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 90;
+  background-color: rgb(94, 94, 94);
+  filter: brightness(80%);
+  margin: 0;
+  color: white;
+
+  span {
+    animation: bounce 5s infinite;
+  }
+}
+
+.Slider {
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: rgb(78, 77, 77);
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  margin: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-10%);
+  }
+  70% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.Disabled {
+  filter: brightness(10%);
+  cursor: not-allowed;
+  animation: colorDown 2s;
+
+  &:hover {
+    filter: brightness(10%);
+  }
+}
+
+.Enabled {
+  animation: colorUp 2s;
+}
+
+@keyframes colorDown {
+  0% {
+    filter: brightness(80%);
+  }
+  50% {
+    filter: brightness(50%);
+  }
+  100% {
+    filter: brightness(10%);
+  }
+}
+
+@keyframes colorUp {
+  0% {
+    filter: brightness(10%);
+  }
+  50% {
+    filter: brightness(50%);
+  }
+  100% {
+    filter: brightness(80%);
+  }
+}
